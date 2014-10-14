@@ -7,47 +7,64 @@ var yeoman = require('yeoman-generator');
 var SassLibraryGenerator = yeoman.generators.Base.extend({
   initializing: function () {
     this.pkg = require('../package.json');
-  },
 
-  prompting: function () {
-    var done = this.async();
+    this.name = this.user.git.name();
+    this.email = this.user.git.email();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the primo SassLibrary generator!'
-    ));
+    this.website = shell.exec('git config --get user.website', { silent: true }).output.trim();
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
+    this.user.github.username(function(err, username){
+      this.githubUsername = username;
     }.bind(this));
   },
 
-  writing: {
-    app: function () {
-      this.dest.mkdir('app');
-      this.dest.mkdir('app/templates');
+  prompting: {
+    askForName: function() {
+      var done = this.async();
 
-      this.src.copy('_package.json', 'package.json');
-      this.src.copy('_bower.json', 'bower.json');
+      var prompts = [{
+        name: 'libraryName',
+        message: 'What is the name of your Sass library?',
+        default: path.basename(process.cwd())
+      }, {
+        name: 'description',
+        message: 'Please provide a short description for the project'
+      }];
+
+      this.prompt(prompts, function(props) {
+        this.libraryName = props.libraryName;
+        this.description = props.description;
+
+        done();
+      }.bind(this));
+    }
+  },
+
+  writing: {
+    before: function() {
+      if(!this.website){
+        this.website = this.githubUsername ? 'https://github.com/' + this.githubUsername : 'https://github.com/';
+        this.log('\n\nCouldn\'t find your website in git config under \'user.website\'');
+        this.log('Defaulting to Github url: ' + this.website);
+      }
     },
 
     projectfiles: function () {
-      this.src.copy('editorconfig', '.editorconfig');
-      this.src.copy('jshintrc', '.jshintrc');
+      this.template('readme.md', 'readme.md');
+
+      this.template('license', 'license');
+
+      this.template('editorconfig', '.editorconfig');
+      this.template('gitignore', '.gitignore');
+      // this.template('travis.yml', '.travis.yml');
+      // this.template('_package.json', 'package.json');
     }
   },
 
   end: function () {
-    this.installDependencies();
+    this.installDependencies({
+      npm: false
+    });
   }
 });
 
