@@ -12,7 +12,7 @@ $ bower install --save <%= _.slugify(libraryName) %>
 
 ```scss
 .selector
-  @include _.slugify(libraryName)();
+  @include <%= _.slugify(libraryName) %>();
 ```
 
 ## License
