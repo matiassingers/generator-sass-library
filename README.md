@@ -13,6 +13,20 @@ $ npm install --global generator-sass-library
 
 ```sh
 $ yo sass-library
+[?] What is the name of your Sass library? hello-world
+[?] Please provide a short description for the project: says hello to the entire world
+[?] Please add some keywords: greeting message nice
+[?] Do you want to add this library to Sache (http://www.sache.in/)? Yes
+
+Initial sache.json file will be created, please manually submit it at: http://www.sache.in/
+
+   create _main.scss
+   create readme.md
+   create license
+   create .editorconfig
+   create .gitignore
+   create bower.json
+   create sache.json
 
 ```
 
