@@ -74,6 +74,10 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
       this.sascheKeywords = JSON.stringify(this.keywords);
     },
 
+    app: function() {
+      this.template('_main.scss', '_main.scss');
+    },
+
     projectfiles: function () {
       this.template('readme.md', 'readme.md');
       this.template('license', 'license');
