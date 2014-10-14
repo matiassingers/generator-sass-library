@@ -1,6 +1,6 @@
 {
   "name": "<%= _.slugify(libraryName) %>",
   "description": "<%= description %>",
-  "tags": <%= sascheKeywords %>
+  "tags": <%= keywords %>
 }
 

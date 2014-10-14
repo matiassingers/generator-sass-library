@@ -30,21 +30,16 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
         name: 'description',
         message: 'Please provide a short description for the project'
       }, {
+        name: 'keywords',
+        message: 'Please add some keywords',
+        filter: function(input){
+          return input.split(' ');
+        }
+      }, {
         name: 'sache',
         message: 'Do you want to add this library to Sache (http://www.sache.in/)?',
         type: 'confirm',
         default: true
-      }, {
-        name: 'sacheKeywords',
-        message: 'Please add some keywords for Sache',
-        when: function(answers) {
-          var done = this.async();
-
-          done(answers.sache);
-        },
-        filter: function(input){
-          return input.split(' ');
-        }
       }];
 
       this.prompt(prompts, function(props) {
@@ -52,7 +47,7 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
         this.description = props.description;
 
         this.sache = props.sache;
-        this.keywords = props.sacheKeywords;
+        this.keywords = JSON.stringify(props.keywords);
 
         done();
       }.bind(this));
@@ -70,8 +65,6 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
         this.log('\n\nCouldn\'t find your website in git config under \'user.website\'');
         this.log('Defaulting to Github url: ' + this.website);
       }
-
-      this.sascheKeywords = JSON.stringify(this.keywords);
     },
 
     app: function() {
