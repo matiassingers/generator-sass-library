@@ -81,6 +81,7 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
       this.template('editorconfig', '.editorconfig');
       this.template('gitignore', '.gitignore');
 
+      this.template('_bower.json', 'bower.json');
       if(this.sache) {
         this.template('_sache.json', 'sache.json');
       }

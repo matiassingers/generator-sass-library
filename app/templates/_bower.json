@@ -1,6 +1,13 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%= _.slugify(libraryName) %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "author": "<%= name %> <<%= email %>> (<%= website %>)",
+  "ignore": [
+    ".gitignore",
+    ".editorconfig",
+    "travis.yml"
+  ],
+  "main": "_main.scss",
+  "license": "MIT"
 }
-
