@@ -1,4 +1,5 @@
 # generator-sass-library [![Gitter](http://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/matiassingers/generator-sass-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/matiassingers/generator-sass-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > start a simple Sass library
 
 
