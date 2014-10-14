@@ -1,8 +1,8 @@
 'use strict';
-var util = require('util');
+
 var path = require('path');
+var shell = require('shelljs');
 var yeoman = require('yeoman-generator');
-var yosay = require('yosay');
 
 var SassLibraryGenerator = yeoman.generators.Base.extend({
   initializing: function () {
