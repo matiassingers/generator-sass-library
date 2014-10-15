@@ -107,7 +107,9 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
   },
 
   end: function () {
-    // hmm ...
+    this.installDependencies({
+      bower: false
+    });
   }
 });
 
