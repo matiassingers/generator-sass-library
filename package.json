@@ -21,7 +21,8 @@
   ],
   "dependencies": {
     "yeoman-generator": "^0.17.0",
-    "shelljs": "~0.3.0"
+    "shelljs": "~0.3.0",
+    "sassdoc": "~1.10.3"
   },
   "devDependencies": {
     "mocha": "*"
