@@ -1,5 +1,19 @@
 {
-  "name": "package",
-  "version": "0.0.0",
   "dependencies": {}
+  "name": "<%= _.slugify(libraryName) %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= githubUsername %>/<%= _.slugify(libraryName) %>"
+  },
+  "author": "<%= name %> <<%= email %>> (<%= website %>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= githubUsername %>/<%= _.slugify(libraryName) %>/issues"
+  },
+  "homepage": "https://github.com/<%= githubUsername %>/<%= _.slugify(libraryName) %>",
 }

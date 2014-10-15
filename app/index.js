@@ -83,8 +83,8 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
         this.template('_sache.json', 'sache.json');
       }
 
+      this.template('_package.json', 'package.json');
       // this.template('travis.yml', '.travis.yml');
-      // this.template('_package.json', 'package.json');
     }
   },
 
