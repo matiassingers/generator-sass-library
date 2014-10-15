@@ -70,6 +70,7 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
 
       if(this.sassdoc){
         this.log('\nInitial SassDoc index.html is generated at ./docs/');
+        this.log('To generate new docs simply run `npm run sassdoc`\n');
       }
 
       if(!this.website){

@@ -5,7 +5,10 @@
   "description": "<%= description %>",
   "engines": {
     "node": ">=0.10.0"
-  },
+  }<% if(sassdoc){ %>,
+  "scripts": {
+    "sassdoc": "sassdoc ./ ./docs"
+  }<% } %>,
   "repository": {
     "type": "git",
     "url": "https://github.com/<%= githubUsername %>/<%= _.slugify(libraryName) %>"
