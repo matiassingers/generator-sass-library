@@ -40,6 +40,11 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
         message: 'Do you want to add this library to Sache (http://www.sache.in/)?',
         type: 'confirm',
         default: true
+      }, {
+        name: 'sassdoc',
+        message: 'Do you want to add SassDoc (http://sassdoc.com/annotations)?',
+        type: 'confirm',
+        default: true
       }];
 
       this.prompt(prompts, function(props) {
@@ -48,6 +53,8 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
 
         this.sache = props.sache;
         this.keywords = JSON.stringify(props.keywords);
+
+        this.sassdoc = props.sassdoc;
 
         done();
       }.bind(this));

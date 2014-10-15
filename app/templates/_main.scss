@@ -1,1 +1,22 @@
-// <%= libraryName %>
+<% if(sassdoc){ %>
+/**
+ * <%= description %>
+ *
+ * @access public
+ *
+ * @author <%= name %>
+ *
+ * @param {Bool} $param (true) - param to be passed to mixin
+ *
+ * @link http://sassdoc.com/annotations/ Documentation on SassDoc annotations
+ *
+ * @todo Add documentation here
+ */
+@mixin <%= libraryName %>($param) {
+  // ...
+}
+<% } else { %>
+/**
+ * <%= libraryName %>
+ */
+<% } %>
