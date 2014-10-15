@@ -55,7 +55,7 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
   },
 
   writing: {
-    before: function() {
+    before: function(){
       if(this.sache){
         this.log('\nInitial sache.json file will be created, please manually submit it at: http://www.sache.in/\n');
       }
@@ -67,11 +67,11 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
       }
     },
 
-    app: function() {
+    app: function(){
       this.template('_main.scss', '_main.scss');
     },
 
-    projectfiles: function () {
+    projectfiles: function(){
       this.template('readme.md', 'readme.md');
       this.template('license', 'license');
 
