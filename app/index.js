@@ -3,6 +3,7 @@
 var path = require('path');
 var shell = require('shelljs');
 var yeoman = require('yeoman-generator');
+var sassdoc = require('sassdoc');
 
 var SassLibraryGenerator = yeoman.generators.Base.extend({
   initializing: function () {
@@ -64,7 +65,11 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
   writing: {
     before: function(){
       if(this.sache){
-        this.log('\nInitial sache.json file will be created, please manually submit it at: http://www.sache.in/\n');
+        this.log('\nInitial sache.json file will be created, please manually submit it at: http://www.sache.in/');
+      }
+
+      if(this.sassdoc){
+        this.log('\nInitial SassDoc index.html is generated at ./docs/');
       }
 
       if(!this.website){
@@ -92,6 +97,11 @@ var SassLibraryGenerator = yeoman.generators.Base.extend({
 
       this.template('_package.json', 'package.json');
       // this.template('travis.yml', '.travis.yml');
+    },
+
+    documentation: function(){
+      var dir = this.destinationRoot();
+      sassdoc.documentize(dir, path.join(dir, '/docs/'), {'no-prompt': true});
     }
   },
 
