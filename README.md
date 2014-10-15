@@ -17,8 +17,12 @@ $ yo sass-library
 [?] Please provide a short description for the project: says hello to the entire world
 [?] Please add some keywords: greeting message nice
 [?] Do you want to add this library to Sache (http://www.sache.in/)? Yes
+[?] Do you want to add SassDoc (http://sassdoc.com/annotations)? Yes
 
 Initial sache.json file will be created, please manually submit it at: http://www.sache.in/
+
+Initial SassDoc index.html is generated at ./docs/
+To generate new docs simply run `npm run sassdoc`
 
    create _main.scss
    create readme.md
@@ -27,7 +31,7 @@ Initial sache.json file will be created, please manually submit it at: http://ww
    create .gitignore
    create bower.json
    create sache.json
-
+   create package.json
 ```
 
 ## todo
