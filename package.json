@@ -1,6 +1,6 @@
 {
   "name": "generator-sass-library",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "start a simple Sass library",
   "license": "MIT",
   "main": "app/index.js",
@@ -25,7 +25,7 @@
   "dependencies": {
     "yeoman-generator": "0.17.7",
     "shelljs": "0.3.0",
-    "sassdoc": "1.8.0"
+    "sassdoc": "1.10.3"
   },
   "devDependencies": {
     "mocha": "2.0.1"
