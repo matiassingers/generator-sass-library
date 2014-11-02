@@ -8,7 +8,7 @@ describe('sass library generator', function () {
     helpers.run(path.join( __dirname, '../app'))
       .inDir(path.join( __dirname, './tmp'))
       .withOptions({ 'skip-install': true })
-      .withPrompt({ sache: false, sassdoc: false })
+      .withPrompts({ sache: false, sassdoc: false })
       .on('end', done);
   });
 

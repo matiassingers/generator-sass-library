@@ -18,8 +18,8 @@ var SassLibraryGenerator = module.exports = function SassLibraryGenerator(args, 
 
   this.pkg = require('../package.json');
 
-  this.name = this.user.git.name();
-  this.email = this.user.git.email();
+  this.name = this.user.git.name;
+  this.email = this.user.git.email;
 
   this.website = shell.exec('git config --get user.website', { silent: true }).output.trim();
 
