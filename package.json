@@ -4,6 +4,9 @@
   "description": "start a simple Sass library",
   "license": "MIT",
   "main": "app/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": "https://github.com/matiassingers/generator-sass-library",
   "author": {
     "name": "Matias Singers",
@@ -25,7 +28,7 @@
     "sassdoc": "~1.10.3"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "2.0.1"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
