@@ -6,9 +6,9 @@ var helpers = require('yeoman-generator').test;
 describe('sass library generator', function () {
   beforeEach(function (done) {
     helpers.run(path.join( __dirname, '../app'))
-      .inDir(path.join( __dirname, './tmp'))  // Clear the directory and set it as the CWD
-      .withOptions({ 'skip-install': true })            // Mock options passed in
-      .withPrompt({ })          // Mock the prompt answers
+      .inDir(path.join( __dirname, './tmp'))
+      .withOptions({ 'skip-install': true })
+      .withPrompt({ sache: false, sassdoc: false })
       .on('end', done);
   });
 
@@ -20,12 +20,13 @@ describe('sass library generator', function () {
       'bower.json',
       'readme.md',
       'license',
-      'sache.json',
-      'docs/index.html',
 
       '_main.scss'
     ];
 
     helpers.assertFiles(expected);
+
+    helpers.assertNoFile('sache.json');
+    helpers.assertNoFile('docs/index.html');
   });
 });

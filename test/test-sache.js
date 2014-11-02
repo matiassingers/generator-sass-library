@@ -6,13 +6,13 @@ var helpers = require('yeoman-generator').test;
 describe('sass library generator', function () {
   beforeEach(function (done) {
     helpers.run(path.join( __dirname, '../app'))
-      .inDir(path.join( __dirname, './tmp'))  // Clear the directory and set it as the CWD
-      .withOptions({ 'skip-install': true })            // Mock options passed in
-      .withPrompt({ sache: false })          // Mock the prompt answers
+      .inDir(path.join( __dirname, './tmp'))
+      .withOptions({ 'skip-install': true })
+      .withPrompt({ sache: true })
       .on('end', done);
   });
 
-  it('shouldn\'t create sache.json', function () {
-    helpers.assertNoFile('sache.json');
+  it('should create sache.json', function () {
+    helpers.assertFile('sache.json');
   });
 });
