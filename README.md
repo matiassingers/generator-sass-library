@@ -1,4 +1,4 @@
-# generator-sass-library [![Gitter](http://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/matiassingers/generator-sass-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# generator-sass-library [![Build Status](http://img.shields.io/travis/matiassingers/generator-sass-library.svg?style=flat-square)](https://travis-ci.org/matiassingers/generator-sass-library) [![Gitter](http://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/matiassingers/generator-sass-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 > start a simple Sass library
 
 ## Features
