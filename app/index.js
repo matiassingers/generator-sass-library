@@ -118,6 +118,8 @@ SassLibraryGenerator.prototype.app = function app(){
 };
 
 SassLibraryGenerator.prototype.documentation = function documentation(){
-  var dir = this.destinationRoot();
-  sassdoc.documentize(dir, path.join(dir, '/docs/'), {'no-prompt': true});
+  if(this.sassdoc){
+    var dir = this.destinationRoot();
+    sassdoc.documentize(dir, path.join(dir, '/docs/'), {'no-prompt': true});
+  }
 };
