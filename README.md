@@ -1,7 +1,12 @@
 # generator-sass-library [![Gitter](http://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/matiassingers/generator-sass-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 > start a simple Sass library
 
-Includes support for [Sache](http://sache.in/) and [SassDoc](http://sassdoc.com/)
+## Features
+
+- [Sache](http://sache.in/)
+   - Creates initial sache.json file
+- [SassDoc](http://sassdoc.com/)
+   - Create handy script in package.json, so you can simply run `npm run sassdoc` to update docs
 
 ## Install
 
