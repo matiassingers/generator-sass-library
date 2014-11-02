@@ -35,6 +35,12 @@ SassLibraryGenerator.prototype.prompting = function prompting() {
   var done = this.async();
 
   var prompts = [{
+    name: 'github',
+    message: 'What is your GitHub username?',
+    when: function(){
+      return this.githubUsername;
+    }
+  }, {
     name: 'libraryName',
     message: 'What is the name of your Sass library?',
     default: path.basename(process.cwd())
@@ -60,6 +66,8 @@ SassLibraryGenerator.prototype.prompting = function prompting() {
   }];
 
   this.prompt(prompts, function(props) {
+    this.githubUsername = props.github || this.githubUsername;
+
     this.libraryName = props.libraryName;
     this.description = props.description;
 
